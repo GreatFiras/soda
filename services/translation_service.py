@@ -1,5 +1,5 @@
 import random
-from data.translations_data import TRANSLATIONS  # ✅ Import static translations
+from Data.translations_data import TRANSLATIONS  # ✅ Import static translations
 from utils.json_handler import load_json, save_json
 from config import USER_TRANSLATIONS_FILE
 from models.schemas import TranslationRequest
