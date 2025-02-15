@@ -1,37 +1,36 @@
 import random
+from data.questions_data import QUESTIONS  # ✅ Import static questions
 from utils.json_handler import load_json, save_json
-from config import TRANSLATIONS_FILE, USER_TRANSLATIONS_FILE , ANSWERS_FILE
-from models.schemas import TranslationRequest
-from state import used_translation_questions
+from config import ANSWERS_FILE
+from models.schemas import AnswerRequest
+from state import used_questions
 
-translation_limit = 6  # Limit for available translations
+question_limit = 6  # Limit for available questions
 
-def get_all_answers():
-    """Fetch all answers from the JSON file."""
-    return {"status": "success", "answers": load_json(ANSWERS_FILE)}
+def get_random_question():
+    """Fetches a unique random question from the Python file."""
+    if len(used_questions) >= question_limit:
+        return {"question": "Done"}
 
+    available_questions = [q for q in QUESTIONS if q["id"] not in used_questions]
 
-def get_balanced_text():
-    """Fetch a translation text from JSON file."""
-    texts = load_json(TRANSLATIONS_FILE)  # ✅ Always loads from file
+    if not available_questions:
+        return {"question": "Done"}
 
-    if not texts:
-        return {"message": "No translations available."}
+    question = random.choice(available_questions)
+    used_questions.add(question["id"])
 
-    if len(used_translation_questions) >= translation_limit:
-        return {"message": "Done"}
+    return {"question_id": question["id"], "question": question["question"]}
 
-    available_texts = [t for t in texts if t["id"] not in used_translation_questions]
+def submit_answer(request: AnswerRequest):
+    """Stores user-submitted answers in JSON."""
+    submitted_answers = load_json(ANSWERS_FILE)
+    submitted_answers.append({"question_id": request.question_id, "answer": request.answer})
+    save_json(ANSWERS_FILE, submitted_answers)
 
-    if not available_texts:
-        return {"message": "Done"}
+    return {"status": "success", "message": "Answer recorded!"}
 
-    text = random.choice(available_texts)
-    used_translation_questions.add(text["id"])
-
-    return {"text_id": text["id"], "text": text["text"], "sentiment": text["sentiment"]}
-
-def reset_translation_questions():
-    """Resets used translation questions without clearing saved translations."""
-    used_translation_questions.clear()
-    return {"message": "Translation questions have been reset successfully."}
+def reset_questions():
+    """Resets used questions."""
+    used_questions.clear()
+    return {"message": "Questions have been reset."}

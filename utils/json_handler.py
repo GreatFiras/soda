@@ -2,7 +2,7 @@ import json
 import os
 
 def load_json(file_path):
-    """Load JSON data from a file."""
+    """Load data from a JSON file."""
     if not os.path.exists(file_path):
         print(f"❌ File {file_path} not found.")
         return []  # Return empty list if file is missing

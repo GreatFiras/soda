@@ -3,15 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from API.routes import router
 
 app = FastAPI()
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["https://promptomani.framer.website/"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
+app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 app.include_router(router)
 
 @app.get("/")

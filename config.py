@@ -1,10 +1,8 @@
 import os
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # Get absolute path of project root
-DATA_DIR = os.path.join(BASE_DIR, "data")  # Set the data folder
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # Get the absolute path of the project root
+DATA_DIR = os.path.join(BASE_DIR, "data")  # Define the data folder
 
-# Ensure FastAPI loads JSON files from the correct location
-QUESTIONS_FILE = os.path.join(DATA_DIR, "questions.json")
-TRANSLATIONS_FILE = os.path.join(DATA_DIR, "translations.json")
-USER_TRANSLATIONS_FILE = os.path.join(DATA_DIR, "user_translations.json")
+# JSON files for storing user responses
 ANSWERS_FILE = os.path.join(DATA_DIR, "answers.json")
+USER_TRANSLATIONS_FILE = os.path.join(DATA_DIR, "user_translations.json")
