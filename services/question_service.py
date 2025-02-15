@@ -1,5 +1,5 @@
 import random
-from data.questions_data import QUESTIONS  # ✅ Import static questions
+from Data.questions_data import QUESTIONS  # ✅ Fix import
 from utils.json_handler import load_json, save_json
 from config import ANSWERS_FILE
 from models.schemas import AnswerRequest
