@@ -1,13 +1,11 @@
 import random
-from fastapi import Request
 from Data.questions_data import QUESTIONS
 from utils.json_handler import load_json, save_json
 from config import ANSWERS_FILE
 from models.schemas import AnswerRequest
 
 USER_PROGRESS = {}  # ✅ Tracks progress for each session
-
-question_limit = 6  # Limit for each user
+question_limit = 6  # ✅ Limit per user
 
 def get_random_question(session_id: str):
     """Returns a unique random question for the session."""

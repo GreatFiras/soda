@@ -10,10 +10,13 @@ router = APIRouter()
 
 @router.get("/get-question")
 async def get_question(request: Request):
+    """Returns a unique random question for the session."""
     session_id = request.headers.get("session_id")
+
     if not session_id:
         return {"error": "Missing session_id"}
-    return get_random_question(session_id)
+
+    return get_random_question(session_id)  # ✅ Use the correct function
 
 @router.post("/submit-answer")
 async def answer_submission(request: Request, answer: AnswerRequest):

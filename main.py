@@ -3,9 +3,17 @@ from fastapi.middleware.cors import CORSMiddleware
 from API.routes import router
 
 app = FastAPI()
-app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
+
+# Enable CORS for frontend requests
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 app.include_router(router)
 
 @app.get("/")
 async def home():
-    return {"message": "FastAPI is running with modular structure!"}
+    return {"message": "FastAPI is running!"}
