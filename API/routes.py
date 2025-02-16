@@ -1,30 +1,34 @@
-from fastapi import APIRouter
-from services.question_service import get_random_question, submit_answer, reset_questions
+from fastapi import APIRouter , Request
+from services.question_service import get_random_question, submit_answer , reset_user_progress
 from services.translation_service import get_balanced_text, submit_translation, reset_translation_questions
 from models.schemas import AnswerRequest, TranslationRequest
 from utils.json_handler import load_json
 from config import ANSWERS_FILE , USER_TRANSLATIONS_FILE
 
+
 router = APIRouter()
 
-# Question Routes
 @router.get("/get-question")
-async def get_question():
-    return get_random_question()
-
-@router.get("/get-answers")
-async def get_answers():
-    """Returns all submitted answers from JSON file."""
-    answers = load_json(ANSWERS_FILE)
-    return {"status": "success", "answers": answers}
+async def get_question(request: Request):
+    session_id = request.headers.get("session_id")
+    if not session_id:
+        return {"error": "Missing session_id"}
+    return get_random_question(session_id)
 
 @router.post("/submit-answer")
-async def answer_submission(request: AnswerRequest):
-    return submit_answer(request)
+async def answer_submission(request: Request, answer: AnswerRequest):
+    session_id = request.headers.get("session_id")
+    if not session_id:
+        return {"error": "Missing session_id"}
+    return submit_answer(session_id, answer)
 
-@router.get("/reset-questions")
-async def reset_questions_endpoint():
-    return reset_questions()
+@router.get("/reset-user-progress")
+async def reset_user(request: Request):
+    session_id = request.headers.get("session_id")
+    if not session_id:
+        return {"error": "Missing session_id"}
+    return reset_user_progress(session_id)
+
 
 # Translation Routes
 @router.get("/get-balanced-sentiments")
