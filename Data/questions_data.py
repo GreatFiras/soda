@@ -1,7 +1,13 @@
 QUESTIONS = [
-    {"id": 1, "question": "What is your favorite Omani dish?"},
-    {"id": 2, "question": "Do you prefer city life or village life? Why?"},
-    {"id": 3, "question": "What do you think about AI in daily life?"},
-    {"id": 4, "question": "What is the best place you visited in Oman?"},
-    {"id": 5, "question": "How has technology changed your daily routine?"},
+    {"id": 1, "question": "العمانيين شعب طيب، عبارة نسمعها دايمًا عن عنّا. تتفق ولا لا؟ /n شاركنا بالعامية رايك"},
+    {"id": 2, "question": "هل تحس العادات التقليدية العمانية لها داعي؟ سواء ايوا أو لا نبا نسمع رأيك."},
+    {"id": 3, "question": "تحس لهجتك تعبّر عنك؟ ولا تتمنى لو تتكلم لهجة ثانية؟"},
+    {"id": 4, "question": "تحس الدوام اونلاين خلانا أكثر إنتاجية ولا أكثر كسل؟"},
+    {"id": 5, "question": "العيد فمسقط أحسن عن البلاد، تتفق او لا وليش؟"},
+    {"id": 6, "question": "ويش رأيك في الفعالية وتنظيم الشباب؟"},
+    {"id": 7, "question": "بكل صراحة وشفافية، مو رأيك في جيلنا؟"},
+    {"id": 8, "question": "كيف غداء الخدمات، خذ راحتك ماحد يعرفك"},
+    {"id": 9, "question": "سمعت ال BMW أحسن من Mercedes"},
+    {"id": 10, "question": "هل الذكاء الاصطناعي بيدمر عقولنا ولا بيطورها؟ شاركنا رأيك بالعامية."}
 ]
+

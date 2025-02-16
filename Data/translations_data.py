@@ -1,7 +1,152 @@
 TRANSLATIONS = [
-    {"id": 1, "text": "The Omani Halwa is a famous dessert in Oman.", "sentiment": "positive"},
-    {"id": 2, "text": "Traffic in the city is a daily struggle.", "sentiment": "negative"},
-    {"id": 3, "text": "The beaches of Salalah are breathtaking!", "sentiment": "positive"},
-    {"id": 4, "text": "Finding parking in the city is a nightmare.", "sentiment": "negative"},
-    {"id": 5, "text": "The sunset in Muscat is one of the most beautiful views.", "sentiment": "positive"},
+    {
+        "id": 1,
+        "text": "تناولت الحلوى العمانية مع القهوة، وكان الطعم رائعًا جدًا.",
+        "sentiment": "positive"
+    },
+    {
+        "id": 2,
+        "text": "الجو في الجبل الأخضر مذهل في هذا الوقت من السنة.",
+        "sentiment": "positive"
+    },
+    {
+        "id": 3,
+        "text": "الجلسة في المجلس مع الأهل والأصدقاء كانت ممتعة جدًا.",
+        "sentiment": "positive"
+    },
+    {
+        "id": 4,
+        "text": "زرت سوق مطرح، وكان مليئًا بالحياة والتقاليد العمانية.",
+        "sentiment": "positive"
+    },
+    {
+        "id": 5,
+        "text": "شربت كرك في المقهى القديم، وكانت تجربة جميلة.",
+        "sentiment": "positive"
+    },
+    {
+        "id": 6,
+        "text": "الكرم العماني لا مثيل له، الضيافة كانت رائعة جدًا.",
+        "sentiment": "positive"
+    },
+    {
+        "id": 7,
+        "text": "شاطئ صلالة في الخريف يبدو كأنه جنة على الأرض.",
+        "sentiment": "positive"
+    },
+    {
+        "id": 8,
+        "text": "الحناء العمانية جميلة جدًا، وشعرت بالسعادة عند وضعها.",
+        "sentiment": "positive"
+    },
+    {
+        "id": 9,
+        "text": "أمسية الشواء على الرمال كانت من أجمل التجارب.",
+        "sentiment": "positive"
+    },
+    {
+        "id": 10,
+        "text": "القيادة في مسقط وقت الغروب تعطي شعورًا بالراحة.",
+        "sentiment": "positive"
+    },
+    {
+        "id": 11,
+        "text": "لبست الدشداشة والمصر اليوم، وكان إحساسًا رائعًا.",
+        "sentiment": "positive"
+    },
+    {
+        "id": 12,
+        "text": "القلوب العمانية طيبة، كل شخص يساعد الآخر دون تردد.",
+        "sentiment": "positive"
+    },
+    {
+        "id": 13,
+        "text": "الزفاف العماني كان مليئًا بالأهازيج التقليدية الجميلة.",
+        "sentiment": "positive"
+    },
+    {
+        "id": 14,
+        "text": "استمتعت بجولة بحرية في قوارب الداو العمانية.",
+        "sentiment": "positive"
+    },
+    {
+        "id": 15,
+        "text": "مذاق المشاكيك العمانية كان لذيذًا جدًا!",
+        "sentiment": "positive"
+    },
+    {
+        "id": 16,
+        "text": "كنت متحمسًا لسوق الحرفيين، لكن كان مزدحمًا جدًا ولم أستطع الاستمتاع.",
+        "sentiment": "negative"
+    },
+    {
+        "id": 17,
+        "text": "الجو في الصيف حار جدًا، ولا أستطيع الخروج في الظهيرة.",
+        "sentiment": "negative"
+    },
+    {
+        "id": 18,
+        "text": "تأخرت الحافلة في مسقط مرة أخرى، وهذا مزعج جدًا.",
+        "sentiment": "negative"
+    },
+    {
+        "id": 19,
+        "text": "المطعم العماني الجديد لم يكن بالمستوى المتوقع.",
+        "sentiment": "negative"
+    },
+    {
+        "id": 20,
+        "text": "القهوة كانت باردة ولم تكن بالمذاق العماني الأصيل.",
+        "sentiment": "negative"
+    },
+    {
+        "id": 21,
+        "text": "الشوارع مزدحمة جدًا في طريق السيب، مما جعل الرحلة طويلة.",
+        "sentiment": "negative"
+    },
+    {
+        "id": 22,
+        "text": "كنت متحمسًا لمشاهدة سباق الهجن، لكنه أُلغي فجأة.",
+        "sentiment": "negative"
+    },
+    {
+        "id": 23,
+        "text": "المشاكيك التي اشتريتها من السوق لم تكن طازجة كما توقعت.",
+        "sentiment": "negative"
+    },
+    {
+        "id": 24,
+        "text": "لم أستطع العثور على موقف للسيارة في الموج مسقط، كان المكان ممتلئًا جدًا.",
+        "sentiment": "negative"
+    },
+    {
+        "id": 25,
+        "text": "لم يعجبني العرس، كان صاخبًا جدًا ولم أشعر بالراحة.",
+        "sentiment": "negative"
+    },
+    {
+        "id": 26,
+        "text": "الرطب لم يكن ناضجًا كما توقعت، كان طعمه غريبًا.",
+        "sentiment": "negative"
+    },
+    {
+        "id": 27,
+        "text": "انتظرت في طابور طويل للحصول على الحلوى العمانية، لكنها نفدت قبل أن أصل.",
+        "sentiment": "negative"
+    },
+    {
+        "id": 28,
+        "text": "المطر كان غزيرًا جدًا في نزوى، ولم أتمكن من زيارة القلعة.",
+        "sentiment": "negative"
+    },
+    {
+        "id": 29,
+        "text": "الخدمة في أحد الفنادق العمانية لم تكن بالمستوى الجيد، شعرت بالإحباط.",
+        "sentiment": "negative"
+    },
+    {
+        "id": 30,
+        "text": "كنت أتوقع أن يكون الكرك لذيذًا، لكنه كان خفيفًا جدًا وغير جيد.",
+        "sentiment": "negative"
+    }
 ]

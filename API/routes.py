@@ -3,7 +3,7 @@ from services.question_service import get_random_question, submit_answer, reset_
 from services.translation_service import get_balanced_text, submit_translation, reset_translation_questions
 from models.schemas import AnswerRequest, TranslationRequest
 from utils.json_handler import load_json
-from config import ANSWERS_FILE
+from config import ANSWERS_FILE , USER_TRANSLATIONS_FILE
 
 router = APIRouter()
 
@@ -38,3 +38,9 @@ async def translation_submission(request: TranslationRequest):
 @router.get("/reset-translation-questions")
 async def reset_translation_questions_endpoint():
     return reset_translation_questions()
+
+@router.get("/get-translations")
+async def get_translations():
+    """Returns all submitted translations from JSON file."""
+    translations = load_json(USER_TRANSLATIONS_FILE)
+    return {"status": "success", "translations": translations}
