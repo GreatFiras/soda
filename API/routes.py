@@ -1,5 +1,5 @@
 from fastapi import APIRouter , Request
-from services.question_service import get_random_question, submit_answer , reset_user_progress
+from services.question_service import get_random_question, submit_answer , reset_user_progress 
 from services.translation_service import get_balanced_text, submit_translation, reset_translation_questions
 from models.schemas import AnswerRequest, TranslationRequest
 from utils.json_handler import load_json
@@ -29,6 +29,17 @@ async def reset_user(request: Request):
     session_id = request.headers.get("session_id")
     if not session_id:
         return {"error": "Missing session_id"}
+    
+    return reset_user_progress(session_id)
+
+@router.get("/reset-questions")
+async def reset_questions(request: Request):
+    """Resets user progress for answering questions."""
+    session_id = request.headers.get("session_id")
+
+    if not session_id:
+        return {"error": "Missing session_id"}
+
     return reset_user_progress(session_id)
 
 
