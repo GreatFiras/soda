@@ -2,6 +2,8 @@ from fastapi import APIRouter
 from services.question_service import get_random_question, submit_answer, reset_questions
 from services.translation_service import get_balanced_text, submit_translation, reset_translation_questions
 from models.schemas import AnswerRequest, TranslationRequest
+from utils.json_handler import load_json
+from config import ANSWERS_FILE
 
 router = APIRouter()
 
@@ -9,6 +11,12 @@ router = APIRouter()
 @router.get("/get-question")
 async def get_question():
     return get_random_question()
+
+@router.get("/get-answers")
+async def get_answers():
+    """Returns all submitted answers from JSON file."""
+    answers = load_json(ANSWERS_FILE)
+    return {"status": "success", "answers": answers}
 
 @router.post("/submit-answer")
 async def answer_submission(request: AnswerRequest):
