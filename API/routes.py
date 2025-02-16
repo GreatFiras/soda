@@ -29,6 +29,20 @@ async def reset_user(request: Request):
         return {"error": "Missing session_id"}
     return reset_user_progress(session_id)
 
+from fastapi import APIRouter, Request
+from services.question_service import reset_user_progress
+
+router = APIRouter()
+
+@router.get("/reset-questions")
+async def reset_questions(request: Request):
+    """Resets user progress for answering questions."""
+    session_id = request.headers.get("session_id")
+
+    if not session_id:
+        return {"error": "Missing session_id"}
+
+    return reset_user_progress(session_id)
 
 # Translation Routes
 @router.get("/get-balanced-sentiments")
